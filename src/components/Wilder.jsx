@@ -3,10 +3,11 @@ import React from 'react'
 import blank_image from '../assets/blank-profile.png'
 import styles from '../styles/Wilder.module.css'
 
-function Wilder({id, name,city, skills}) {
+function Wilder({id, name,city, skills, wilders, setWilders}) {
 const deleteWilder = () => {
-  console.log('DELETE ',id)
   axios.delete(`http://localhost:5000/api/wilder/${id}`)
+  setWilders(wilders.filter((wilder) => wilder.id !== id))
+
 }
 
 
