@@ -1,10 +1,13 @@
+import axios from 'axios'
 import React from 'react'
 import blank_image from '../assets/blank-profile.png'
 import styles from '../styles/Wilder.module.css'
 
-function Wilder({name,city, skills}) {
-
-  /* http://localhost:5000/api/wilder/2/grade */
+function Wilder({id, name,city, skills}) {
+const deleteWilder = () => {
+  console.log('DELETE ',id)
+  axios.delete(`http://localhost:5000/api/wilder/${id}`)
+}
 
 
     return (
@@ -23,6 +26,7 @@ function Wilder({name,city, skills}) {
 )}
  </ul>
 
+<button onClick={deleteWilder}>Delete</button>
     </article>
   )
 }
