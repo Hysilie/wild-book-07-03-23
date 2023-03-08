@@ -4,6 +4,7 @@ import styles from '../styles/Wilder.module.css'
 
 function Wilder({name,city, skills}) {
 
+  /* http://localhost:5000/api/wilder/2/grade */
 
 
     return (
@@ -15,8 +16,8 @@ function Wilder({name,city, skills}) {
 <h4>Skills</h4>
 <ul className={styles.skills} >
 { skills?.map((skill) => 
-  <li>
-    {skill.title}
+  <li key={skill.id}>
+    {skill.name}
     <span className={styles.votes}>{skill.votes}</span>
   </li>
 )}

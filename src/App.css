@@ -27,3 +27,8 @@ h4 {
 p {
   margin: 0 0 1.15em;
 }
+
+a, a:active, a:focus, a:visited {
+  text-decoration: none;
+  color:white
+}
