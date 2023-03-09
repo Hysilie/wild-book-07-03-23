@@ -13,7 +13,6 @@ function FormInput({label, name, type,placeholder, handleWilderInformations}) {
     onChange={handleWilderInformations}
     placeholder={`${placeholder}`}
      />
-    
     </div>
   )
 }

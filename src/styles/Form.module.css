@@ -16,12 +16,3 @@ padding : 15px;
     padding: 24px;
     
   } 
-
-  button {
-margin: auto;
-border : none;
-border-radius: 3px;
-    width: 10vw;
-    color : white;
-    background-color: #F76C6C;
-}
