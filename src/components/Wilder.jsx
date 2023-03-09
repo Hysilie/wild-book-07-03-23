@@ -1,13 +1,12 @@
 import axios from 'axios'
-import React, {useState} from 'react'
+import React from 'react'
 import blank_image from '../assets/blank-profile.png'
 import trash from '../assets/trash.svg'
 import styles from '../styles/Wilder.module.css'
 import Skill from './Skill'
 
 function Wilder({id, name,city, skills, wilders, setWilders, getWilders, allSkills}) {
-/* const [wilderSkills, setWilderSkills] = useState(skills)
- */
+
 const deleteWilder = async () => {
   await axios.delete(`http://localhost:5000/api/wilder/${id}`)
   setWilders(wilders.filter((wilder) => wilder.id !== id))
@@ -21,6 +20,7 @@ const addSkill = async(e) =>{
 
  const deleteSkill = async(skillID) => {
   await axios.delete(`http://localhost:5000/api/wilder/${id}/skills/${skillID}/delete`) 
+  getWilders()
 } 
 
     return (

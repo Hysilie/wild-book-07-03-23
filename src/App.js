@@ -3,9 +3,11 @@ import "./App.css";
 import Header from "./components/Header";
 import Home from "./pages/Home";
 import Form from "./pages/Form";
+import { WilderContextProvider } from "./contexts/WilderContext";
 
 function App() {
   return (
+    <WilderContextProvider>
     <Router>
       <div className="App">
         <Header />
@@ -15,7 +17,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/form" element={<Form />} />
       </Routes>
-    </Router>
+    </Router></WilderContextProvider>
   );
 }
 
