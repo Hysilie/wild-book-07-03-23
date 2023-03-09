@@ -1,7 +1,6 @@
 import React, {useState, useEffect} from 'react'
 import axios from 'axios';
 import Wilder from './Wilder'
- import wildersData from "../data/wilders"
 import styles from "../styles/WildersList.module.css"
 
 function WildersList() {

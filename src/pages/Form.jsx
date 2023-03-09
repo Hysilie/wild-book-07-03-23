@@ -1,6 +1,8 @@
 import React, {useState} from 'react'
 import FormInput from '../components/FormInput';
 import axios from 'axios';
+import styles from '../styles/Form.module.css'
+
 
 function Form() {
 const [wilderInformations, setWilderInformations] = useState({name :'', city:'', email:''})
@@ -20,14 +22,14 @@ const [wilderInformations, setWilderInformations] = useState({name :'', city:'',
 
 
 return (
-    <div>
-        <form onSubmit={addWilder}>
+    <div className={styles.container}>
+        <form className={styles.formulary} onSubmit={addWilder}>
 
-        <FormInput inputType='text' inputName='name' labelName='Name' handleWilderInformations={handleWilderInformations} />
-        <FormInput inputType='email' inputName='email' labelName='Email' handleWilderInformations={handleWilderInformations} />
-        <FormInput inputType='text' inputName='city' labelName='City' handleWilderInformations={handleWilderInformations} />
+        <FormInput text='text' name='name' label='Name' placeholder='John Doe'handleWilderInformations={handleWilderInformations} />
+        <FormInput text='email' name='email' label='Email' placeholder='email@example.com' handleWilderInformations={handleWilderInformations} />
+        <FormInput text='text' name='city' label='City' placeholder='London' handleWilderInformations={handleWilderInformations} />
 
-        <button type='submit'>Ajouter un Wilder </button>
+        <button type='submit'>Add </button>
         </form>
     </div>
   )

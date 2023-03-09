@@ -1,15 +1,19 @@
 import React from 'react'
+import styles from '../styles/FormInput.module.css'
 
-function FormInput({labelName, inputName, inputType, handleWilderInformations}) {
+function FormInput({label, name, type,placeholder, handleWilderInformations}) {
 
 
   return (
-    <div>
-    <label>{labelName} :</label>
+    <div className={styles.inputRow}>
+    <label>{label} </label>
     <input 
-    name={`${inputName}`}
-    type={`${inputType}`}
-    onChange={handleWilderInformations} />
+    name={`${name}`}
+    type={`${type}`}
+    onChange={handleWilderInformations}
+    placeholder={`${placeholder}`}
+     />
+    
     </div>
   )
 }
