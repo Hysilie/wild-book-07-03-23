@@ -22,7 +22,7 @@ const getSkills = async () => {
 useEffect(() => {
  getWilders()
  getSkills()
-}, [])
+}, [wilders])
 
 
 

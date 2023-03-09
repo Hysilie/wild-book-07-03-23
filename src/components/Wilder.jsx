@@ -1,27 +1,27 @@
 import axios from 'axios'
-import React from 'react'
+import React, {useState} from 'react'
 import blank_image from '../assets/blank-profile.png'
 import trash from '../assets/trash.svg'
 import styles from '../styles/Wilder.module.css'
 import Skill from './Skill'
 
 function Wilder({id, name,city, skills, wilders, setWilders, getWilders, allSkills}) {
-
-
+/* const [wilderSkills, setWilderSkills] = useState(skills)
+ */
 const deleteWilder = async () => {
   await axios.delete(`http://localhost:5000/api/wilder/${id}`)
   setWilders(wilders.filter((wilder) => wilder.id !== id))
-
 }
 
 const addSkill = async(e) =>{
   const value = e.target.value;
-
   await axios.post(`http://localhost:5000/api/wilder/${id}/skills/${value}/add`)
   getWilders()
-
 }
 
+ const deleteSkill = async(skillID) => {
+  await axios.delete(`http://localhost:5000/api/wilder/${id}/skills/${skillID}/delete`) 
+} 
 
     return (
 <article className={styles.card}>
@@ -33,7 +33,7 @@ const addSkill = async(e) =>{
 <h4>Skills</h4>
 <ul className={styles.skills} >
 { skills?.map((skill) => 
-  <Skill skill={skill} />
+  <Skill  key={skill.id} skill={skill} deleteSkill={deleteSkill}/>
 )}
  </ul>
 

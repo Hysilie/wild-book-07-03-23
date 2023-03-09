@@ -79,3 +79,7 @@
     height: 40px;
     width:40px;
   }
+
+  .trash:hover{
+    background-color: white;
+  }
